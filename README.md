@@ -16,11 +16,17 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 - Apuntadores
 
 ## Estructuras de control:
-
-- If
-- For
-- While
+1. If
+- if bloque 1 ese bloque 2 end
+2. For
+- For iterador in arreglo bloque end
+3. While
+- While condiconal bloque end
+4. Condicional ?:
+- condicional? bloque 1 : bloque 2
+## Operadores de un solo Toquen
 - Break
+- Next
 
 ## Otras cosas:
 
