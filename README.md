@@ -48,7 +48,7 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 
 | Palabra | Equivalente |
 |:----:|:--:|
-| - | while |
+| giratiempo | while |
 | - | function |
 | - | end |
 | leviosa | if |
