@@ -19,9 +19,9 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 1. If
 - if bloque 1 ese bloque 2 end
 2. For
-- For iterador in arreglo bloque end
+- for iterador in arreglo bloque end
 3. While
-- While condiconal bloque end
+- while condiconal bloque end
 4. Condicional ?:
 - condicional? bloque 1 : bloque 2
 ## Operadores de un solo Toquen
@@ -62,3 +62,6 @@ Calcular fibonacci
 Multiplicar dos matrices (producto matricial)
 ```
 ```
+## LEXER
+
+-Palabras Reservadas: true, false, if, else, elif, Array, end,for, in, while, Break, Next, 
