@@ -72,14 +72,12 @@ Las instrucciones se separan utilizando el simbolo punto y coma (;) una instrucc
 
 | Palabra    | Equivalente |
 | :----:     | :--:|
-| focus      | for each |
-|    -       | for |
+| focus      | for each|
+| geminio    | for conditional|
 | giratiempo | while |
 | finite     | break |
-| finite     | break |
-| incantatem | end (main end) |
-| enchantment| function |
-| potion     | procedure |
+| alohomora  | function |
+| aberto     | main |
 | aparicio   | print |
 |    -       | end |
 |    -       | in |
