@@ -274,20 +274,31 @@ end
 
 ## Lista de palabras reservadas
 
-| Palabra    | Equivalente |
-| :----:     | :--:|
-| focus      | for each|
-| geminio    | for conditional|
-| giratiempo | while |
-| finite     | break |
-| alohomora  | function |
-| aberto     | main |
-| aparicio   | print |
-|    -       | end |
-|    -       | in |
-|    -       | if |
-|    -       | else |
-|    -       | elif |
+| Palabra     | Equivalente |
+| :----:      | :--:|
+| focus       | for (each)|
+| geminio     | for (conditional)|
+| giratiempo  | while |
+| finite      | break |
+| alohomora   | function |
+| aberto      | main |
+| aparicion   | print |
+| aparecium   | return |
+| avadakedavra| error |
+|    -        | end |
+|    -        | in |
+|    -        | if |
+|    -        | else |
+|    -        | elif |
+|    -        | true |
+|    -        | false |
+|    -        | int |
+|    -        | float |
+|    -        | char |
+|    -        | string |
+|    -        | bool |
+|    -        | pointer |
+|    -        | register |
 
 ## LEXER
 
