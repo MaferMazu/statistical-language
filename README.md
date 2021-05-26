@@ -285,6 +285,7 @@ end
 | aparicion   | print |
 | aparecium   | return |
 | avadakedavra| error |
+|    -        | next |
 |    -        | end |
 |    -        | in |
 |    -        | if |
