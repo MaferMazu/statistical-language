@@ -26,7 +26,15 @@ float respuesta = 27.1
 ```
 
 - Arreglos
+```
+int[3] notas = [5,5,5]
+```
 - Registros
+ ```
+ebublio gryffindor = {nombre: string, apellido: string, edad:int, mejor_hechizo: string}
+
+gryffindor elegido = {Ricardo, Monascal, 35, comidius }
+```
 - Cadena de caracteres
 - Variantes
 - Apuntadores
@@ -225,7 +233,40 @@ end
 ### Multiplicar dos matrices (producto matricial)
 
 ```
+int[m,n] alohomora multiplicar_matrices(int[m,p] x, int[q,n] y, int m , int p , int q, int n)
+   if p != q
+    aparicion("no se pueden multiplicar las matrices")
+    aparecium(0)
+  else
+    int i = 0
+    int j = 0
+    int k = 0
+    int[m,n] c
+    int suma
+    geminio ( i < m )
+        geminio ( j < n)
+            suma = 0
+            geminio ( k < p )
+                c[i][j] += x[i][k]*y[k][j]
+                k++
+            end
+            j++
+        end
+        i++
+    end
+    aparecium(C)
+  end
+end
+  
+int aberto()
+    int[2,2] A = [[1],[2];[3],[4]]
+    int[2,3] B = [[5],[6];[7],[8];[9],[10]]
+    int[2,3] C = multiplicar_matrices (A , B , 2 , 2 , 2 ,3 )
+    aparicion(C)
+    aparecium(0)
+end
 ```
+
 
 ## Lista de palabras reservadas
 
