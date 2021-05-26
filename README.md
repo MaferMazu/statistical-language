@@ -39,6 +39,12 @@ gryffindor elegido = {Ricardo, Monascal, 35, comidius }
 - Variantes
 - Apuntadores
 
+## Operadores:
+- Aritmeticos: +, -, *, div, mod, /, ^
+- Asignacion: =
+- Relacionales: >, <, <=, >=, !=, ==
+- Autoincremento o reduccion: ++, --
+- Operadores booleanos: &&, ||, !
 
 ## Estructuras de control:
 
