@@ -45,9 +45,72 @@ end
 ```
 
 2. For
-- for iterador in arreglo bloque end
+
+- For - each: se recorren los elementos de un arreglo 
+
+```
+// Funcion que imprime todos los impares de un arreglo
+
+void alohomora impares(int[] arr)
+    focus i in arr
+        if (i mod 2 == 0)
+            aparicion(i)
+    end
+end
+
+int aberto()
+    impares([3,34,5,23,12,24,8])
+end
+
+SALIDA:
+        3
+        5
+        23
+```
+- For condicional: ejecutar el bloque mientras se cumpla la condicion booleana
+```
+// Funcion que imprime todos los impares de un arreglo
+
+void alohomora impares(int[] arr)
+    geminio (int i= 0 : (i <= length(arr)) : i++) 
+        if (arr[i] mod 2 == 0)
+            aparicion(i)
+    end
+end
+
+int aberto()
+    impares([2,34,5,23,12,24,8])
+end
+
+SALIDA:
+        5
+        23
+```
 3. While
-- while condiconal bloque end
+```
+// Funcion que retorna true si un elemento esta en un arreglo
+bool alohomora exist(int[] arr, int n)
+    int i = 0
+    int l = length(arr)
+    bool e = true
+    giratiempo (arr[i] != 15)
+        if (i < l - 1)
+            i++
+        else
+            e = false
+            finite
+    end
+    aparecium(e)
+end
+
+int aberto()
+    int[9] z = [3,4,78,23,12,15,19]
+    aparicion(exist(z,15))
+    aparecium(0)
+end
+SALIDA:
+true
+```
 
 ## Operadores de un solo Toquen
 - break
