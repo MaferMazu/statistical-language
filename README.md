@@ -31,7 +31,6 @@ Las instrucciones se separan utilizando el simbolo punto y coma (;) una instrucc
 - Enteros
 - Booleanos
 - Flotantes
-
 - Arreglos
 - Registros
 - Cadena de caracteres
@@ -46,11 +45,10 @@ Las instrucciones se separan utilizando el simbolo punto y coma (;) una instrucc
 - for iterador in arreglo bloque end
 3. While
 - while condiconal bloque end
-4. Condicional ?:
-- condicional? bloque 1 : bloque 2
+
 ## Operadores de un solo Toquen
-- Break
-- Next
+- break
+- next
 
 ## Otras cosas:
 
