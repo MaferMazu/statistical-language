@@ -31,18 +31,27 @@ float respuesta = 27.1
 - Variantes
 - Apuntadores
 
+
 ## Estructuras de control:
+
 1. If
-- if bloque 1 ese bloque 2 end
+
+```
+if x > 0
+    int z = x + y
+else
+    int z = y
+end
+```
+
 2. For
 - for iterador in arreglo bloque end
 3. While
 - while condiconal bloque end
-4. Condicional ?:
-- condicional? bloque 1 : bloque 2
+
 ## Operadores de un solo Toquen
-- Break
-- Next
+- break
+- next
 
 ## Subrutinas
 
@@ -54,6 +63,8 @@ Todos nuestros procedimientos van a retornar algo, y esto se hace con la palabra
 
 
 ```
+// Funcion que suma dos numeros
+
 int alohomora suma(int x, int y)
     int z = x + y
     aparecium(z)
@@ -117,7 +128,9 @@ end
 Y se pueden crear funciones recursivas.
 
 
-## Ejemplo de nuestro Hello World!
+## 🌟 Programas de ejemplo
+
+### Hello World!
 
 ```
 int aberto()
@@ -126,25 +139,49 @@ int aberto()
 end
 ```
 
+### Calcular fibonacci
+
+```
+int alohomora fibonacci(int n)
+  int r = 0
+  int s = 1
+  int[n] arr  // inicializa un arreglo con n enteros
+  geminio (r < n)
+    arr[s+1] = arr[r] + arr[s]
+    r++
+    s++
+  end
+  aparecium(arr)
+end
+int aberto()
+    int z = fibonacci(5)
+    aparicion(z)
+    aparecium(0)
+end
+```
+
+### Multiplicar dos matrices (producto matricial)
+
+```
+```
+
 ## Lista de palabras reservadas
 
-| Palabra | Equivalente |
-|:----:|:--:|
+| Palabra    | Equivalente |
+| :----:     | :--:|
+| focus      | for each|
+| geminio    | for conditional|
 | giratiempo | while |
-| alohomora | function |
-| end | end |
-| if | if |
-| aparecium | return |
+| finite     | break |
+| alohomora  | function |
+| aberto     | main |
+| aparicio   | print |
+|    -       | end |
+|    -       | in |
+|    -       | if |
+|    -       | else |
+|    -       | elif |
 
-## Programas de ejemplo
-
-Calcular fibonacci
-```
-```
-
-Multiplicar dos matrices (producto matricial)
-```
-```
 ## LEXER
 
 -Palabras Reservadas: true, false, if, else, elif, Array, end,for, in, while, Break, Next, 
