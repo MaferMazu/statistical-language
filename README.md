@@ -49,6 +49,7 @@ if x > 0
     int z = x + y
 else
     int z = y
+end
 ```
 
 2. For
@@ -62,6 +63,7 @@ void alohomora impares(int[] arr)
     focus i in arr
         if (i mod 2 == 0)
             aparicion(i)
+        end
     end
 end
 
@@ -82,6 +84,7 @@ void alohomora impares(int[] arr)
     geminio (int i= 0 : (i <= length(arr)) : i++) 
         if (arr[i] mod 2 == 0)
             aparicion(i)
+        end
     end
 end
 
@@ -106,6 +109,7 @@ bool alohomora exist(int[] arr, int n)
         else
             e = false
             finite
+        end
     end
     aparecium(e)
 end
@@ -287,4 +291,3 @@ end
 
 ## LEXER
 
--Palabras Reservadas: true, false, if, else, elif, Array, end,for, in, while, Break, Next, 
