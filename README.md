@@ -102,6 +102,7 @@ end
 int aberto()
     int z = fibonacci(5)
     aparicio z
+    aparecium 0
 end
 ```
 
