@@ -37,6 +37,7 @@ Las instrucciones se separan utilizando el simbolo punto y coma (;) una instrucc
 - Cadena de caracteres
 - Variantes
 - Apuntadores
+
 ##Operadores:
 - Aritmeticos: +, -, *, div, mod, /, **
 - Asignacion: =
