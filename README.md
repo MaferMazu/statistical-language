@@ -1,13 +1,29 @@
-# Nombre del lenguaje
+# 🔮✨ MagicScript
 
 Este es un lenguaje de programación imperativo, fuertemente tipado con verificación estática y con alcance estático con anidamiento de bloques.
+
+La extensión para leer los archivos debe ser: .ms
 
 ## Tipos de datos:
 
 - Caracteres
+
+```
+char z = "z"
+```
 - Enteros
+
+```
+int one = 1
+```
 - Booleanos
+```
+bool este_es_el_mejor_lenguaje = True
+```
 - Flotantes
+```
+float respuesta = 27.1
+```
 
 - Arreglos
 - Registros
@@ -28,20 +44,86 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 - Break
 - Next
 
-## Otras cosas:
+## Subrutinas
 
-- Mecanismo de selección
-- Repetición 
+Son estructuras que nos permiten crear una secuencia de procedimientos a ser ejecutados.
 
-(determinada)
-- Subrutinas 
+La forma de crear funciones es con la palabra reservada "alohomora", seguido el nombre de la función y en parentesis van los argumentos que usará nuestro procedimiento.
 
-(procedimientos, funciones, pasajes por valor y referencia y recursión)
+Todos nuestros procedimientos van a retornar algo, y esto se hace con la palabra "aparecium".
+
+
+```
+int alohomora suma(int x, int y)
+    int z = x + y
+    aparecium(z)
+end
+```
+
+```
+int alohomora f(int x, int y)
+    if x > 0
+        int z = x + y
+    else
+        int z = y
+    end
+    aparecium(z)
+end
+
+int aberto()
+    int z = f(1, 2)
+    aparicion(z)
+    aparecium(0)
+end
+```
+
+### Pasaje de parámetros
+
+Los argumentos se pueden pasar por valor o por referencia. Por defecto se pasan los parametros por valor, pero si se quiere pasar por referencia se coloca la palabra "var" antes.
+
+```
+int alohomora f(int x, var int y)
+    y = 8
+    int z = x + y
+    aparecium(z)
+end
+
+int aberto()
+    int x = 1
+    int y = 2
+    int z = f(x, y)
+    aparicion(y)
+    aparecium(0)
+end
+```
+
+Esto imprimiría 8
+
+
+Se pueden tener funciones dentro de funciones.
+
+
+```
+int alohomora principal(int x, int y)
+    int alohomora suma(int x, int y)
+        int z = x + y
+        aparecium(z)
+    end
+    z = suma(x, y)
+    aparecium(z)
+end
+```
+
+Y se pueden crear funciones recursivas.
+
 
 ## Ejemplo de nuestro Hello World!
 
 ```
-
+int aberto()
+    aparicion("Hello World!")
+    aparecium(0)
+end
 ```
 
 ## Lista de palabras reservadas
@@ -49,9 +131,10 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 | Palabra | Equivalente |
 |:----:|:--:|
 | giratiempo | while |
-| - | function |
-| - | end |
-| leviosa | if |
+| alohomora | function |
+| end | end |
+| if | if |
+| aparecium | return |
 
 ## Programas de ejemplo
 
