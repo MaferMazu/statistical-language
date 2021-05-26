@@ -2,6 +2,29 @@
 
 Este es un lenguaje de programación imperativo, fuertemente tipado con verificación estática y con alcance estático con anidamiento de bloques.
 
+## Bloques 
+Se separan o anidan con llaves, de modo que cada bloque se compone de una llave que abre una lista de instrucciones y finaliza con
+una llave que cierre. Ejemplo
+
+{
+  Instruccion 1 ;
+  Instruccion 2 ;
+  ...
+}
+
+-Condiciones sobre bloques: 
+
+* Cada bloque esta compuesto por un par de llaves { }
+* Los bloques deben estar detro de una funcion o anidado dentro de otro bloque.
+* un bloque no debe estar vacio (debe existir al menos una instruccion dentro de el). 
+
+## Instrucciones
+Las instrucciones se separan utilizando el simbolo punto y coma (;) una instruccion corresponde a una de las siguientes condiciones:
+
+* Asignacion
+* Llamado a una funcion o procedimiento
+* Operadores de autoincremento o reduccion.
+
 ## Tipos de datos:
 
 - Caracteres
@@ -14,6 +37,7 @@ Este es un lenguaje de programación imperativo, fuertemente tipado con verifica
 - Cadena de caracteres
 - Variantes
 - Apuntadores
+
 
 ## Estructuras de control:
 1. If
