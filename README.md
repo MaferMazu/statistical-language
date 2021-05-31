@@ -7,25 +7,42 @@ La extensión para leer los archivos debe ser: .ms
 ## Tipos de datos:
 
 - Caracteres
+Por los momentos solo codigo ASCII
 
 ```
 char z = "z"
 ```
+
+-String
+Nuestro string seran arreglos de caracteres
+Al final de cada cadena de caracteres se le asignara el  \0 , para indentificar que la cadena acabó, el tamaño del arreglo sera siempre de uno más. 
+
+```
+string *valor = "hola hogwarts"
+```
+
 - Enteros
+Nuestros enteros usaran complemento a dos. Su tamaño sera de 4 bytes (32 bits), y puede tomar 232 estados distintos de -2147483648 a 2147483647
 
 ```
 int one = 1
 ```
 - Booleanos
+Nuestro valores booleanos son True, False.
 ```
 bool este_es_el_mejor_lenguaje = True
 ```
 - Flotantes
+Vamos a utilizar flotantes de precisión sencilla (flout) de 4 bytes, presición doble(double) de 8 bytes, precisión doble largo ( long double ) de 10 bytes.
 ```
 float respuesta = 27.1
 ```
 
 - Arreglos
+Los arreglos son iterables y son accesibles mediante nombre[indice]
+Los arreglos serán del tipo homogeneo
+Su indice comenzara desde el valor 0 
+Su tamaño máximo viene dado por el valor máximo que puede tomar std :: size_t del sistema.
 ```
 int[3] notas = [5,5,5]
 ```
@@ -38,6 +55,33 @@ gryffindor elegido = {Ricardo, Monascal, 35, comidius }
 - Cadena de caracteres
 - Variantes
 - Apuntadores
+ ```
+int i = 5;
+int *p, *q;
+p = &i; // Se le asigna a ’p’ la dirección de ’i’
+q = p; // Se le asigna a ’q’ la dirección almacenada en ’p’ (la misma de ’i’)
+```
+-Input
+Se utiliza un prefijo para identificar el tipo de dato que recibirá y este tiene que ser del mismo tipo de dato de la variable donde será almacenada.
+Estos prefijos seran:
+ %c caracter
+ %i integer
+ %f float
+ %d double
+ %l long double
+ %p pointer
+ %s pointer de string
+ ```
+ int aberto()
+    int testInteger
+    apareciumf("Enter an integer: ")
+    examino("%d", &testInteger)
+    aparecium("Number = %d",testInteger)
+    reditus(0)
+ end
+```
+##
+
 
 ## Operadores:
 - Aritmeticos: +, -, *, div, mod, /, ^
@@ -65,12 +109,13 @@ end
 ```
 // Funcion que imprime todos los impares de un arreglo
 
-void alohomora impares(int[] arr)
+int alohomora impares(int[] arr)
     focus i in arr
         if (i mod 2 == 0)
-            aparicion(i)
+            aparecium(i)
         end
     end
+    reditus(0)
 end
 
 int aberto()
@@ -86,12 +131,13 @@ SALIDA:
 ```
 // Funcion que imprime todos los impares de un arreglo
 
-void alohomora impares(int[] arr)
+int alohomora impares(int[] arr)
     geminio (int i= 0 : (i <= length(arr)) : i++) 
         if (arr[i] mod 2 == 0)
-            aparicion(i)
+            aparecium(i)
         end
     end
+    reditus(0)
 end
 
 int aberto()
@@ -117,21 +163,24 @@ bool alohomora exist(int[] arr, int n)
             finite
         end
     end
-    aparecium(e)
+    reditus(e)
 end
 
 int aberto()
     int[9] z = [3,4,78,23,12,15,19]
-    aparicion(exist(z,15))
-    aparecium(0)
+    aparecium(exist(z,15))
+    reditus(0)
 end
 SALIDA:
 true
 ```
 
 ## Operadores de un solo Toquen
-- break
-- next
+- break:
+  finite: se usa para hacer una parada en un ciclo
+  
+- pass:
+ saltus: es la instrucción que se usa para saltar una condición
 
 ## Subrutinas
 
@@ -147,7 +196,7 @@ Todos nuestros procedimientos van a retornar algo, y esto se hace con la palabra
 
 int alohomora suma(int x, int y)
     int z = x + y
-    aparecium(z)
+    reditus(z)
 end
 ```
 
@@ -158,13 +207,13 @@ int alohomora f(int x, int y)
     else
         int z = y
     end
-    aparecium(z)
+    reditus(z)
 end
 
 int aberto()
     int z = f(1, 2)
-    aparicion(z)
-    aparecium(0)
+    aparecium(z)
+    reditus(0)
 end
 ```
 
@@ -176,15 +225,15 @@ Los argumentos se pueden pasar por valor o por referencia. Por defecto se pasan 
 int alohomora f(int x, var int y)
     y = 8
     int z = x + y
-    aparecium(z)
+    reditus(z)
 end
 
 int aberto()
     int x = 1
     int y = 2
     int z = f(x, y)
-    aparicion(y)
-    aparecium(0)
+    aparecium(y)
+    reditus(0)
 end
 ```
 
@@ -198,10 +247,10 @@ Se pueden tener funciones dentro de funciones.
 int alohomora principal(int x, int y)
     int alohomora suma(int x, int y)
         int z = x + y
-        aparecium(z)
+        reditus(z)
     end
     z = suma(x, y)
-    aparecium(z)
+    reditus(z)
 end
 ```
 
@@ -214,8 +263,8 @@ Y se pueden crear funciones recursivas.
 
 ```
 int aberto()
-    aparicion("Hello World!")
-    aparecium(0)
+    aparecium("Hello World!")
+    reditus(0)
 end
 ```
 
@@ -226,17 +275,17 @@ int alohomora fibonacci(int n)
   int r = 0
   int s = 1
   int[n] arr  // inicializa un arreglo con n enteros
-  geminio (r < n)
+  giratiempo (r < n)
     arr[s+1] = arr[r] + arr[s]
     r++
     s++
   end
-  aparecium(arr)
+  reditus(arr)
 end
 int aberto()
     int z = fibonacci(5)
-    aparicion(z)
-    aparecium(0)
+    aparecium(z)
+    reditus(0)
 end
 ```
 
@@ -245,18 +294,18 @@ end
 ```
 int[m,n] alohomora multiplicar_matrices(int[m,p] x, int[q,n] y, int m , int p , int q, int n)
    if p != q
-    aparicion("no se pueden multiplicar las matrices")
-    aparecium(0)
+    aparecium("no se pueden multiplicar las matrices")
+    reditus(0)
   else
     int i = 0
     int j = 0
     int k = 0
     int[m,n] c
     int suma
-    geminio ( i < m )
-        geminio ( j < n)
+    giratiempo ( i < m )
+        giratiempo ( j < n)
             suma = 0
-            geminio ( k < p )
+            giratiempo ( k < p )
                 c[i][j] += x[i][k]*y[k][j]
                 k++
             end
@@ -264,16 +313,16 @@ int[m,n] alohomora multiplicar_matrices(int[m,p] x, int[q,n] y, int m , int p , 
         end
         i++
     end
-    aparecium(C)
+    reditus(C)
   end
 end
   
 int aberto()
-    int[2,2] A = [[1],[2];[3],[4]]
-    int[2,3] B = [[5],[6];[7],[8];[9],[10]]
+    int[2,2] A = [[1,2]],[3,4]],
+    int[2,3] B = [[5,6];[7,8];[9,10]]
     int[2,3] C = multiplicar_matrices (A , B , 2 , 2 , 2 ,3 )
-    aparicion(C)
-    aparecium(0)
+    aparecium(C)
+    reditus(0)
 end
 ```
 
@@ -288,10 +337,11 @@ end
 | finite      | break |
 | alohomora   | function |
 | aberto      | main |
-| aparicion   | print |
-| aparecium   | return |
+| examino     | input |
+| aparecium   | print |
+| reditus     | return |
 | avadakedavra| error |
-|    -        | next |
+| saltus      | pass |
 |    -        | end |
 |    -        | in |
 |    -        | if |
