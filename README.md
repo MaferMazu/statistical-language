@@ -14,35 +14,52 @@ char z = "z"
 ```
 
 -String
+
 Nuestro string seran arreglos de caracteres
-Al final de cada cadena de caracteres se le asignara el  \0 , para indentificar que la cadena acabó, el tamaño del arreglo sera siempre de uno más. 
+Al final de cada cadena de caracteres se le asignará el  \0 , para indentificar que la cadena acabó, el tamaño del arreglo será siempre de uno más. 
 
 ```
 string *valor = "hola hogwarts"
 ```
 
 - Enteros
-Nuestros enteros usaran complemento a dos. Su tamaño sera de 4 bytes (32 bits), y puede tomar 232 estados distintos de -2147483648 a 2147483647
+
+
+Nuestros enteros usaran complemento a dos. Su tamaño será de 4 bytes (32 bits), y puede tomar 232 estados distintos de -2147483648 a 2147483647
 
 ```
 int one = 1
 ```
 - Booleanos
+
+
 Nuestro valores booleanos son True, False.
 ```
 bool este_es_el_mejor_lenguaje = True
 ```
 - Flotantes
+
+
 Vamos a utilizar flotantes de precisión sencilla (flout) de 4 bytes, presición doble(double) de 8 bytes, precisión doble largo ( long double ) de 10 bytes.
 ```
 float respuesta = 27.1
 ```
 
 - Arreglos
-Los arreglos son iterables y son accesibles mediante nombre[indice]
+
+
+Los arreglos son iterables y son accesibles mediante nombre[índice]
+
+
 Los arreglos serán del tipo homogeneo
-Su indice comenzara desde el valor 0 
+
+
+Su indice comenzará desde el valor 0 
+
+
 Su tamaño máximo viene dado por el valor máximo que puede tomar std :: size_t del sistema.
+
+
 ```
 int[3] notas = [5,5,5]
 ```
@@ -52,8 +69,9 @@ ebublio gryffindor = {nombre: string, apellido: string, edad:int, mejor_hechizo:
 
 gryffindor elegido = {Ricardo, Monascal, 35, comidius }
 ```
-- Cadena de caracteres
 - Variantes
+
+
 - Apuntadores
  ```
 int i = 5;
@@ -62,15 +80,25 @@ p = &i; // Se le asigna a ’p’ la dirección de ’i’
 q = p; // Se le asigna a ’q’ la dirección almacenada en ’p’ (la misma de ’i’)
 ```
 -Input
+
 Se utiliza un prefijo para identificar el tipo de dato que recibirá y este tiene que ser del mismo tipo de dato de la variable donde será almacenada.
+
 Estos prefijos seran:
+
  %c caracter
+ 
  %i integer
+ 
  %f float
+ 
  %d double
+ 
  %l long double
+ 
  %p pointer
+ 
  %s pointer de string
+ 
  ```
  int aberto()
     int testInteger
@@ -175,12 +203,15 @@ SALIDA:
 true
 ```
 
-## Operadores de un solo Toquen
+## Operadores dentro de los ciclos.
+
 - break:
-  finite: se usa para hacer una parada en un ciclo
+
+  finite: se usa para hacer una parada en un ciclo.
   
 - pass:
- saltus: es la instrucción que se usa para saltar una condición
+
+ saltus: es la instrucción que se usa para saltar una condición.
 
 ## Subrutinas
 
