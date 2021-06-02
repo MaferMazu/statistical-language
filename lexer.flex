@@ -1,12 +1,15 @@
-/* scanner for a toy Pascal-like language */
+/* MAGICSCRIPT */
 
 %{
 /* need this for the call to atof() below */
 #include <math.h>
+
 %}
 
+%option yylineno
+
 DIGIT    [0-9]
-ID	    [a-z][a-z0-9]*
+ID	 [a-z][a-z0-9]*
 %%
 
 "alohomora"     {printf("ALOHOMORA ");}
@@ -32,20 +35,25 @@ ID	    [a-z][a-z0-9]*
 \]      {printf("CLOSEBRACKET ");}
 \(      {printf("OPENPARENT ");}
 \)      {printf("CLOSEPARENT ");}
+\,      {printf("COMMA ");}
+\;      {printf("SEMICOLON ");}
+\:      {printf("COLON ");}
+\.      {printf("DOT ");}
 
 
 "True"  {printf("TRUE ");}
 "False" {printf("FALSE ");}
 
-"char"          {printf("TCHAR ");}
-"string"        {printf("TSTRING ");}
-"int"           {printf("TINT ");}
-"float"         {printf("TFLOAT ");}
+"char"          {printf("TYPECHAR ");}
+"string"        {printf("TYPESTRING ");}
+"int"           {printf("TYPEINT ");}
+"float"         {printf("TYPEFLOAT ");}
 "double"        {printf("DOUBLE ");}
 "pointer"       {printf("POINTER ");}
 "ebublio"       {printf("EBUBLIO ");}
 
-
+\+\+    {printf("AUTOPLUS ");}
+\-\-    {printf("AUTOMINUS ");}
 \+      {printf("PLUS ");}
 \-      {printf("MINUS ");}
 \*      {printf("MULT ");}
@@ -64,13 +72,34 @@ ID	    [a-z][a-z0-9]*
 \>      {printf("LESS ");}
 ==      {printf("EQUALTO ");}
 !=      {printf("DIFFERENTTO ");}
+=       {printf("EQUAL ");}
 
+\t	{printf("\t");}
+\n      {printf("\n");}
+" "	{printf(" ");}
+\"      {printf('"');}
+\'      {printf("'");}
 
+{DIGIT}.{DIGIT}         {printf("FLOAT(%d) ", atoi(yytext));}
+{DIGIT}                 {printf("INT(%d) ", atoi(yytext));}
+[{ID} {ID}]*            {printf("SENTENCE(%s) ", yytext);}
+{ID}                    {printf("WORD(%s) ", yytext);}
+
+.       {printf("INVALIDTOKEN(%s) ", yytext);}
 %%
 
 int main(int argc, char** argv )
 {
-    yyin = fopen( "t1.txt", "r" );
-    yylex();
-    return(0);
+        char *file;
+        if (argc > 1){
+                file = argv[1];
+        }
+                
+        else {
+                file = "t1.ms";
+        }
+                
+        yyin = fopen( file, "r" );
+        yylex();
+        return(0);
 }
