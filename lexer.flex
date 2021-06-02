@@ -1,55 +1,105 @@
-/* scanner for a toy Pascal-like language */
+/* MAGICSCRIPT */
 
 %{
 /* need this for the call to atof() below */
 #include <math.h>
+
 %}
 
+%option yylineno
+
 DIGIT    [0-9]
-BOOL    true|false
-FUNCTION    alohomora|aberto
-TYPE    int|bool|char|string|float|double|pointer|ebublio
-ID	    [a-z][a-z0-9]*
+ID	 [a-z][a-z0-9]*
 %%
-{TYPE}{1}  {
-        printf( "TYPE: %s\n", yytext );
-        }
 
-if|elif|else|end|in|finite|reditus|saltus|{FUNCTION}	       {
-        printf( "TOKEN: %s\n", yytext );
-        }
-{DIGIT}+    {
-        printf( "An integer: %s (%d)\n", yytext,
-            atoi( yytext ) );
-        }
+"alohomora"     {printf("ALOHOMORA ");}
+"aberto"        {printf("ABERTO ");}
+"focus"         {printf("FOCUS ");}
+"geminio"       {printf("GEMINIO ");}
+"giratiempo"    {printf("GIRATIEMPO ");}
+"finite"        {printf("FINITE ");}
+"examino"       {printf("EXAMINO ");}
+"aparecium"     {printf("APARECIUM ");}
+"reditus"       {printf("REDITUS ");}
+"avadakedavra"  {printf("AVADAKEDAVRA ");}
+"saltus"        {printf("SALTUS ");}
 
-{DIGIT}+"."{DIGIT}*	      {
-        printf( "A float: %s (%g)\n", yytext,
-            atof( yytext ) );
-        }
+"if"            {printf("IF ");}
+"else"          {printf("ELSE ");}
+"end"           {printf("END ");}
 
-{ID}	       {printf( "An identifier: %s\n", yytext );}
+\/\/    {printf("COMMENT ");}
+\{      {printf("OPENCURL ");}
+\}      {printf("CLOSECURL ");}
+\[      {printf("OPENBRACKET ");}
+\]      {printf("CLOSEBRACKET ");}
+\(      {printf("OPENPARENT ");}
+\)      {printf("CLOSEPARENT ");}
+\,      {printf("COMMA ");}
+\;      {printf("SEMICOLON ");}
+\:      {printf("COLON ");}
+\.      {printf("DOT ");}
 
-"+"|"-"|"*"|"/"|"div"|"mod"   {printf( "Un operador aritmetico: %s\n", yytext );}
 
-"="   {printf( "TOKEN Operador ASIGNACION: %s\n", yytext );}
+"True"  {printf("TRUE ");}
+"False" {printf("FALSE ");}
 
-"&&"|"||"|"!"   {printf( "TOKEN operador BOOLEANO: %s\n", yytext );}
+"char"          {printf("TYPECHAR ");}
+"string"        {printf("TYPESTRING ");}
+"int"           {printf("TYPEINT ");}
+"float"         {printf("TYPEFLOAT ");}
+"double"        {printf("DOUBLE ");}
+"pointer"       {printf("POINTER ");}
+"ebublio"       {printf("EBUBLIO ");}
 
-":"   {printf("Transicion: %s\n", yytext);}
-"++"   {printf( "Operador autoincremento: %s\n", yytext );}
-"--"   {printf( "Operador decremento: %s\n", yytext );}
+\+\+    {printf("AUTOPLUS ");}
+\-\-    {printf("AUTOMINUS ");}
+\+      {printf("PLUS ");}
+\-      {printf("MINUS ");}
+\*      {printf("MULT ");}
+\*\*    {printf("POW ");}
+\/      {printf("DIV ");}
+"mod"   {printf("MOD ");}
 
-"//"     {printf( "TOKEN COMENTARIO: %s\n", yytext );}
-[ \t\n]+	     /* eat up whitespace */
+\&      {printf("ANDPERSEAND ");}
 
-.	       printf( "TOKEN NO RECONOCIDO: %s\n", yytext );
+"not"   {printf("NOT ");}
+"and"   {printf("AND ");}
+"or"    {printf("OR ");}
+\<\=    {printf("GREATEREQUAL ");}
+\>\=    {printf("LESSEQUAL ");}
+\<      {printf("GREATER ");}
+\>      {printf("LESS ");}
+==      {printf("EQUALTO ");}
+!=      {printf("DIFFERENTTO ");}
+=       {printf("EQUAL ");}
 
+\t	{printf("\t");}
+\n      {printf("\n");}
+" "	{printf(" ");}
+\"      {printf('"');}
+\'      {printf("'");}
+
+{DIGIT}.{DIGIT}         {printf("FLOAT(%d) ", atoi(yytext));}
+{DIGIT}                 {printf("INT(%d) ", atoi(yytext));}
+[{ID} {ID}]*            {printf("SENTENCE(%s) ", yytext);}
+{ID}                    {printf("WORD(%s) ", yytext);}
+
+.       {printf("INVALIDTOKEN(%s) ", yytext);}
 %%
 
 int main(int argc, char** argv )
 {
-    yyin = fopen( "t1.txt", "r" );
-    yylex();
-    return(0);
+        char *file;
+        if (argc > 1){
+                file = argv[1];
+        }
+                
+        else {
+                file = "t1.ms";
+        }
+                
+        yyin = fopen( file, "r" );
+        yylex();
+        return(0);
 }
