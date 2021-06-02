@@ -77,12 +77,10 @@ ID	 [a-z][a-z0-9]*
 \t	{printf("\t");}
 \n      {printf("\n");}
 " "	{printf(" ");}
-\"      {printf('"');}
-\'      {printf("'");}
+
 
 {DIGIT}.{DIGIT}         {printf("FLOAT(%d) ", atoi(yytext));}
 {DIGIT}                 {printf("INT(%d) ", atoi(yytext));}
-[{ID} {ID}]*            {printf("SENTENCE(%s) ", yytext);}
 {ID}                    {printf("WORD(%s) ", yytext);}
 
 .       {printf("INVALIDTOKEN(%s) ", yytext);}

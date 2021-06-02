@@ -1150,27 +1150,27 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 81 "lexer.flex"
+#line 82 "lexer.flex"
 {printf("FLOAT(%d) ", atoi(yytext));}
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 82 "lexer.flex"
+#line 83 "lexer.flex"
 {printf("INT(%d) ", atoi(yytext));}
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 83 "lexer.flex"
+#line 84 "lexer.flex"
 {printf("WORD(%s) ", yytext);}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 85 "lexer.flex"
+#line 86 "lexer.flex"
 {printf("INVALIDTOKEN(%s) ", yytext);}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 86 "lexer.flex"
+#line 87 "lexer.flex"
 ECHO;
 	YY_BREAK
 #line 1177 "lex.yy.c"
@@ -2190,7 +2190,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 86 "lexer.flex"
+#line 87 "lexer.flex"
 
 
 int main(int argc, char** argv )
