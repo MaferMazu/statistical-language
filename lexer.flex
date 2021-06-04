@@ -10,8 +10,9 @@
 
 DIGIT    [0-9]
 ID	 [a-z][a-z0-9]*
+STRING   \"([^\"])*\"{1} 
 %%
-
+{STRING}        {printf("STRING(%s) ", yytext);}
 "alohomora"     {printf("ALOHOMORA ");}
 "aberto"        {printf("ABERTO ");}
 "focus"         {printf("FOCUS ");}
