@@ -52,6 +52,7 @@ STRING   \"([^\"])*\"{1}
 "float"         {printf("TYPEFLOAT ");}
 "double"        {printf("DOUBLE ");}
 "pointer"       {printf("POINTER ");}
+"bool"          {printf("TYPEBOOLEAN ");}
 "ebublio"       {printf("EBUBLIO ");}
 
 \+\+    {printf("AUTOPLUS ");}

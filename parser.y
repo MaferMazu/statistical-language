@@ -7,7 +7,7 @@ int yylex();
 int yyerror(char *s);
 
 %}
-
+%nonassoc functions                                      
 %right ','
 %left AND OR
 %right NOT 
@@ -32,6 +32,9 @@ int yyerror(char *s);
 
 %%
 
+main: funaberto
+ | funrecursive funaberto
+ ;
 expresion: statement
  | returnexpresion
  | booleanexpression
@@ -102,12 +105,13 @@ type: TYPEINT
  | DOUBLE
  | TYPEBOOLEAN
  ;
-functions: funaberto
- | fun
- | funrecursive funaberto
- ;
-funrecursive: ALOHOMORA 
 
+funaberto: type ABERTO OPENPARENT declarationList CLOSEPARENT expresion returnexpresion END
+ ;
+function: type ALOHOMORA WORD OPENPARENT declarationList CLOSEPARENT expresion returnexpresion END
+ ;
+funrecursive: function function 
+ ;
 %%
 main(int argc, char **argv)
 {
