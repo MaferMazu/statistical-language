@@ -46,7 +46,7 @@ returnexpresion: FINITE
  ;
 booleanexpression: BOOL OR BOOL
  | BOOL AND BOOL
- | NOT BOOL
+ | NOT BOOLs
  | boolcombined
  ;
 boolcombined: booleanexpression OR booleanexpression
@@ -110,7 +110,8 @@ funaberto: type ABERTO OPENPARENT declarationList CLOSEPARENT expresion returnex
  ;
 function: type ALOHOMORA WORD OPENPARENT declarationList CLOSEPARENT expresion returnexpresion END
  ;
-funrecursive: function function 
+funrecursive: function 
+ | function funrecursive
  ;
 %%
 main(int argc, char **argv)
