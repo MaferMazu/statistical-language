@@ -15,7 +15,7 @@ int yyerror(char *s);
 %token STRING ALOHOMORA ABERTO FOCUS GEMINIO GIRATIEMPO FINITE EXAMINO APARECIUM REDITUS AVADAKEDAVRA SALTUS IF ELSE END 
 %token COMMENT OPENCURL CLOSECURL OPENBRACKET CLOSEBRACKET OPENPARENT CLOSEPARENT COMMA SEMICOLON COLON DOT
 %token TRUE FALSE
-%token TYPECHAR TYPESTRING TYPEINT TYPEFLOAT DOUBLE BOOL POINTER EBUBLIO IN
+%token TYPECHAR TYPESTRING TYPEINT TYPEFLOAT TYPEBOOLEAN DOUBLE POINTER EBUBLIO IN BOOL
 %token AUTOPLUS AUTOMINUS PLUS MINUS MULT POW DIV MOD ANDPERSEAND NOT AND OR GREATEREQUAL LESSEQUAL GREATER LESS EQUALTO
 %token DIFFERENTTO EQUAL FLOAT INT WORD INVALIDTOKEN
 
@@ -33,7 +33,6 @@ int yyerror(char *s);
 %%
 
 expresion: statement
- | exp
  | returnexpresion
  | booleanexpression
  | expresion expresion
@@ -63,17 +62,19 @@ exp: data PLUS data
  | data POW data
  | data DIV data
  | data MOD data
+ | data
  ;							
 
+ ;
 declaration: type WORD
  ;
 
 declarationList: declaration ',' declaration
  ;
  
-ifstatement: IF OPENPARENT BOOL CLOSEPARENT expresion END
- | IF OPENPARENT BOOL CLOSEPARENT expresion ELSE expresion END
- | IF OPENPARENT BOOL CLOSEPARENT expresion ifstatement ELSE expresion END
+ifstatement: IF OPENPARENT bool CLOSEPARENT expresion END
+ | IF OPENPARENT bool CLOSEPARENT expresion ELSE expresion END
+ | IF OPENPARENT bool CLOSEPARENT expresion ifstatement ELSE expresion END
  ;
 
 forstatement: FOCUS WORD IN OPENBRACKET arraydata CLOSEBRACKET expresion END
@@ -84,19 +85,29 @@ whilestatement: GIRATIEMPO booleanexpression expresion END
 
 arraydata: /* Nothing */
  | data
- |data ',' arraydata
+ | data ',' arraydata
  ;
 data: INT
  | FLOAT
  | DOUBLE
  | STRING
+ | bool
+ ;
+bool: TRUE
+ | FALSE
  ;
 type: TYPEINT
  | TYPECHAR
  | TYPEFLOAT
  | DOUBLE
- | BOOL
+ | TYPEBOOLEAN
  ;
+functions: funaberto
+ | fun
+ | funrecursive funaberto
+ ;
+funrecursive: ALOHOMORA 
+
 %%
 main(int argc, char **argv)
 {
