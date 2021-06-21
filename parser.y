@@ -7,7 +7,7 @@ int yylex();
 int yyerror(char *s);
 
 %}
-%nonassoc functions                                      
+                                     
 %right ','
 %left AND OR
 %right NOT 
@@ -44,9 +44,9 @@ returnexpresion: FINITE
  | FINITE data
  | FINITE expresion
  ;
-booleanexpression: BOOL OR BOOL
- | BOOL AND BOOL
- | NOT BOOLs
+booleanexpression: bool OR bool
+ | bool AND bool
+ | NOT bool
  | boolcombined
  ;
 boolcombined: booleanexpression OR booleanexpression
