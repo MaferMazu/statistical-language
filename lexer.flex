@@ -28,6 +28,7 @@ STRING   \"([^\"])*\"{1}
 "if"            {printf("IF ");}
 "else"          {printf("ELSE ");}
 "end"           {printf("END ");}
+"in"           {printf("IN ");}
 
 \/\/    {printf("COMMENT ");}
 \{      {printf("OPENCURL ");}

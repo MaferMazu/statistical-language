@@ -7,12 +7,15 @@ int yylex();
 int yyerror(char *s);
 
 %}
+
 %right ','
+%left AND OR
+%right NOT 
 
 %token STRING ALOHOMORA ABERTO FOCUS GEMINIO GIRATIEMPO FINITE EXAMINO APARECIUM REDITUS AVADAKEDAVRA SALTUS IF ELSE END 
 %token COMMENT OPENCURL CLOSECURL OPENBRACKET CLOSEBRACKET OPENPARENT CLOSEPARENT COMMA SEMICOLON COLON DOT
 %token TRUE FALSE
-%token TYPECHAR TYPESTRING TYPEINT TYPEFLOAT DOUBLE BOOL POINTER EBUBLIO 
+%token TYPECHAR TYPESTRING TYPEINT TYPEFLOAT DOUBLE BOOL POINTER EBUBLIO IN
 %token AUTOPLUS AUTOMINUS PLUS MINUS MULT POW DIV MOD ANDPERSEAND NOT AND OR GREATEREQUAL LESSEQUAL GREATER LESS EQUALTO
 %token DIFFERENTTO EQUAL FLOAT INT WORD INVALIDTOKEN
 
@@ -31,9 +34,27 @@ int yyerror(char *s);
 
 expresion: statement
  | exp
+ | returnexpresion
+ | booleanexpression
+ | expresion expresion
+ ;
+returnexpresion: FINITE
+ | FINITE data
+ | FINITE expresion
+ ;
+booleanexpression: BOOL OR BOOL
+ | BOOL AND BOOL
+ | NOT BOOL
+ | boolcombined
+ ;
+boolcombined: booleanexpression OR booleanexpression
+ | booleanexpression AND booleanexpression
  ;
 statement: declaration '=' exp
  | declarationList '=' exp
+ | ifstatement
+ | forstatement
+ | whilestatement
  ;
 
 exp: data PLUS data
@@ -50,10 +71,25 @@ declaration: type WORD
 declarationList: declaration ',' declaration
  ;
  
+ifstatement: IF OPENPARENT BOOL CLOSEPARENT expresion END
+ | IF OPENPARENT BOOL CLOSEPARENT expresion ELSE expresion END
+ | IF OPENPARENT BOOL CLOSEPARENT expresion ifstatement ELSE expresion END
+ ;
 
+forstatement: FOCUS WORD IN OPENBRACKET arraydata CLOSEBRACKET expresion END
+ | FOCUS WORD IN WORD expresion END
+ ;
+whilestatement: GIRATIEMPO booleanexpression expresion END 
+ ;
+
+arraydata: /* Nothing */
+ | data
+ |data ',' arraydata
+ ;
 data: INT
  | FLOAT
  | DOUBLE
+ | STRING
  ;
 type: TYPEINT
  | TYPECHAR
